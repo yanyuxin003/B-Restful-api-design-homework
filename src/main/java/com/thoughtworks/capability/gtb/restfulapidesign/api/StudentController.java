@@ -26,5 +26,16 @@ public class StudentController {
     public void addStudent(@RequestBody Student student){
         studentService.addStudent(student);
     }
-    
+
+    @DeleteMapping("students/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteStudent(@PathVariable int id) {
+        studentService.deleteStudentById(id);
+    }
+
+    @GetMapping("/students")
+    public List<Student> getStudentList(@RequestParam(required = false) String gender){
+        return studentService.getStudents(gender);
+    }
+
 }
