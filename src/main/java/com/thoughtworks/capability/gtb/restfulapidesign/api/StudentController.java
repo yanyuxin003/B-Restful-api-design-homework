@@ -17,13 +17,13 @@ public class StudentController {
     @Autowired
     StudentService studentService;
 
-    public StudentController(StudentService studentService){
+    public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
 
     @PostMapping("/student")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addStudent(@RequestBody Student student){
+    public void addStudent(@RequestBody Student student) {
         studentService.addStudent(student);
     }
 
@@ -34,14 +34,20 @@ public class StudentController {
     }
 
     @GetMapping("/students")
-    public List<Student> getStudentList(@RequestParam(required = false) String gender){
+    public List<Student> getStudentList(@RequestParam(required = false) String gender) {
         return studentService.getStudents(gender);
     }
 
     @GetMapping("students/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Student findStudent(@PathVariable int id) {
-       return studentService.findStudentById(id);
+        return studentService.findStudentById(id);
     }
-    
+
+
+    @PutMapping("students/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Student updateStudent(@PathVariable Student student,int id) {
+        return studentService.updateStudentById(student,id);
+    }
 }

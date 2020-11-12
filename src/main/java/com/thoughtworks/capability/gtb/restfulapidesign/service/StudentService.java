@@ -55,4 +55,12 @@ public class StudentService {
             }
         return genderStudents;
     }
+
+    public Student updateStudentById(Student student,int id) {
+        Student newStudent = findStudentById(student.getId());
+        newStudent.setName(student.getName());
+        newStudent.setGender(student.getGender());
+        newStudent.setNote(student.getNote());
+        return newStudent;
+    }
 }
