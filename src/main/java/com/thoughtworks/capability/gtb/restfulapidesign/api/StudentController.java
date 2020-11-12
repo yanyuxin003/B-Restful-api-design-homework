@@ -38,4 +38,11 @@ public class StudentController {
         return studentService.getStudents(gender);
     }
 
+    @GetMapping("students/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Student findStudent(@PathVariable int id) {
+       return studentService.findStudentById(id);
+    }
+
+
 }
