@@ -43,6 +43,5 @@ public class StudentController {
     public Student findStudent(@PathVariable int id) {
        return studentService.findStudentById(id);
     }
-
-
+    
 }
