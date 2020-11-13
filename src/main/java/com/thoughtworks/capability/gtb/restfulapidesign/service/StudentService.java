@@ -9,7 +9,7 @@ import java.util.Map;
 
 @Service
 public class StudentService {
-    List<Student> students = new ArrayList<>();
+    public List<Student> students = new ArrayList<>();
 
 
     public StudentService() {
