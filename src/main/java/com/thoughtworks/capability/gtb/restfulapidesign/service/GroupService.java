@@ -14,7 +14,7 @@ public class GroupService {
     private StudentService studentService;
     private List<Group> groups = new ArrayList<>();
     private final int GroupsMaxLength = 6;
-    
+
     public GroupService(StudentService studentService) {
         this.studentService = studentService;
     }

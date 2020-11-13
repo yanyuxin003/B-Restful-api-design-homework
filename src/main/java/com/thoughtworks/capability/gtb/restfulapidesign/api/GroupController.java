@@ -13,8 +13,7 @@ public class GroupController {
     public GroupController(GroupService groupService) {
         this.groupService = groupService;
     }
-
-
+    
     @PostMapping("groups/")
     @ResponseStatus(HttpStatus.CREATED)
     public List<Group> getGroups() {
@@ -23,8 +22,6 @@ public class GroupController {
 
     @PutMapping("/groups/{id}")
     public Group updateGroupName(@PathVariable int id, @RequestBody String name) {
-//        groupService.groupStudents();
-//
         return  groupService.updateGroupById(id, name);
     }
 }
